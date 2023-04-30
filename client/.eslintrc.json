@@ -1,10 +1,13 @@
 {
+	"env": {
+		"browser": true,
+		"node": true
+	},
 	"root": true,
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:prettier/recommended",
-		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
 		"prettier"
 	],
@@ -21,6 +24,7 @@
 		"@typescript-eslint/no-unused-vars": ["error"],
 		"prettier/prettier": "warn",
 		"react/react-in-jsx-scope": "off",
-		"react/jsx-uses-react": "off"
+		"react/jsx-uses-react": "off",
+		"@typescript-eslint/no-non-null-assertion": "off"
 	}
 }

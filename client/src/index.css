@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-stroke-white {
+	color: transparent;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: white;
+}
