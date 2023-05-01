@@ -6,11 +6,12 @@ import Bunny from '../Bunny'
 import BackDrop from '../BackDrop'
 import GrassGround from '../GrassGround'
 import ControlSphere from '../ControlSphere'
+import { Suspense } from 'react'
 
 function CanvasComponent() {
 	return (
 		<Canvas
-			camera={{ position: [0, 0, 3], fov: 25 }}
+			camera={{ position: [0, 0, 5], fov: 25 }}
 			shadows
 			gl={{ preserveDrawingBuffer: true }}
 			className='w-full max-w-full h-full'
@@ -18,10 +19,13 @@ function CanvasComponent() {
 			<Environment preset='park' background blur={0.5} />
 			<ambientLight intensity={0.5} />
 			<pointLight position={[10, 10, 10]} intensity={1} color='#ffeabf' />
-			<OrbitControls maxDistance={5} />
+			<OrbitControls maxDistance={5} autoRotate={true} autoRotateSpeed={0.5} />
 
 			<Center>
-				<Bunny />
+				<Suspense>
+					<Bunny />
+				</Suspense>
+
 				<BackDrop />
 			</Center>
 

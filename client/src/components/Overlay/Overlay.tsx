@@ -25,6 +25,20 @@ function Overlay() {
 			<div className='fixed bottom-20 right-20 font-schibsted'>
 				<Customizer />
 			</div>
+
+			<div className='fixed bottom-20 left-20 font-schibsted text-white'>
+				<h2 className='text-2xl'>Resources - </h2>
+				<a
+					className='mr-4'
+					target='_blank'
+					href='https://sketchfab.com/3d-models/cute-bunny-037f632eb1cc45889219629187df68db'
+				>
+					<i className='ri-folder-download-fill mr-2'></i>Model
+				</a>
+				<a href='https://3dtextures.me/' target='_blank'>
+					<i className='ri-folder-download-fill mr-2'></i>Texture
+				</a>
+			</div>
 		</>
 	)
 }

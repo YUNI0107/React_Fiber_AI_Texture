@@ -8,3 +8,27 @@
 	-webkit-text-stroke-width: 2px;
 	-webkit-text-stroke-color: white;
 }
+
+.gradient-background {
+	background: linear-gradient(
+		-45deg,
+		theme('colors.primary'),
+		theme('colors.secondary-blue'),
+		theme('colors.secondary-green')
+	);
+	background-size: 300% 300%;
+	animation: gradient 5s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

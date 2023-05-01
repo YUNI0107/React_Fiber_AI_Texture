@@ -1,7 +1,13 @@
+import * as THREE from 'three'
 import { useTexture } from '@react-three/drei'
 import { RepeatWrapping } from 'three'
+import { useRef } from 'react'
 
 function GrassGround() {
+	const grassRef = useRef<THREE.Mesh<THREE.BufferGeometry, THREE.Material | THREE.Material[]>>(
+		null!
+	)
+
 	const resizeTexture = (textures: THREE.Texture | THREE.Texture[]) => {
 		if (Array.isArray(textures)) {
 			textures.forEach((texture) => {
@@ -22,7 +28,7 @@ function GrassGround() {
 	)
 
 	return (
-		<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
+		<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]} ref={grassRef}>
 			<planeGeometry args={[20, 20]} />
 			<meshStandardMaterial
 				map={colorMap}
