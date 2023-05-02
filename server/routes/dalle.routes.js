@@ -32,17 +32,20 @@ router.route('/').post(async (req, res) => {
     })
 
     const image = response.data.data[0].b64_json
-    const imagePath = `static/${Date.now()}.png`
+    const imagePath = `${Date.now()}.png`
 
-    fs.writeFile(imagePath, image, 'base64', (err) => {
+    fs.writeFile(`static/${imagePath}`, image, 'base64', (err) => {
       if (err) throw err
       console.log('The image has been saved!')
 
       const __dirname = path.resolve()
-      const filePath = `${__dirname}/${imagePath}`
+      const filePath = `${__dirname}/static/${imagePath}`
 
       res.type('image/png')
       res.sendFile(filePath)
+
+      // Send the path of image
+      // res.status(200).json({ photo: `http://localhost:3000/${imagePath}` })
     })
 
     // Directly send base64 to frond-end

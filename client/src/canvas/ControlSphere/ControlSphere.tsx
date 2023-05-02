@@ -49,6 +49,10 @@ function ControlSphere() {
 				prompt: snap.prompt,
 			}),
 		})
+			// .then((response) => response.json())
+			// .then((data) => {
+			// 	handleDecal(data.photo)
+			// })
 			.then((response) => response.blob())
 			.then((blob) => {
 				const imageURL = URL.createObjectURL(blob)

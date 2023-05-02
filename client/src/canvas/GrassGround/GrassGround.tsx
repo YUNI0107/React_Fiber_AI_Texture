@@ -8,7 +8,7 @@ function GrassGround() {
 		null!
 	)
 
-	const resizeTexture = (textures: THREE.Texture | THREE.Texture[]) => {
+	const resizeTextures = (textures: THREE.Texture | THREE.Texture[]) => {
 		if (Array.isArray(textures)) {
 			textures.forEach((texture) => {
 				texture.repeat.set(10, 10)
@@ -24,7 +24,7 @@ function GrassGround() {
 			'grass/Grass_001_NORM.jpg',
 			'grass/Grass_001_OCC.jpg',
 		],
-		resizeTexture
+		resizeTextures
 	)
 
 	return (

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Decal, useGLTF, useTexture } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
@@ -15,17 +14,7 @@ type GLTFResult = GLTF & {
 function Bunny() {
 	const snap = useSnapshot(state)
 	const { nodes, materials } = useGLTF('/cute_bunny.glb') as GLTFResult
-	const [textureUrl, setTextureUrl] = useState(snap.decal)
-	const texture = useTexture(textureUrl)
-
-	useEffect(() => {
-		const img = new Image()
-		img.onload = () => {
-			setTextureUrl(img.src)
-		}
-
-		img.src = snap.decal
-	}, [snap.decal, setTextureUrl])
+	const texture = useTexture(snap.decal)
 
 	return (
 		<group scale={[0.3, 0.3, 0.3]}>
