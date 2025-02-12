@@ -49,10 +49,19 @@ function ControlSphere() {
 				prompt: snap.prompt,
 			}),
 		})
+			/**
+			 * Methods A:
+			 * Get image URL from server
+			 */
 			// .then((response) => response.json())
 			// .then((data) => {
 			// 	handleDecal(data.photo)
 			// })
+
+			/**
+			 * Methods B:
+			 * Get image blob from server
+			 */
 			.then((response) => response.blob())
 			.then((blob) => {
 				const imageURL = URL.createObjectURL(blob)
