@@ -20,7 +20,7 @@ function CanvasComponent() {
 			<Environment preset='park' background blur={0.3} environmentIntensity={1.5} />
 			<ambientLight intensity={1} />
 			<pointLight position={[10, 10, 10]} intensity={1} color='#ffeabf' />
-			<OrbitControls maxDistance={5} autoRotate={true} autoRotateSpeed={0.5} />
+			<OrbitControls maxDistance={5} autoRotate={false} autoRotateSpeed={0.5} />
 
 			<Center>
 				<Suspense>
